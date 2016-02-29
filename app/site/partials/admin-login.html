@@ -1,0 +1,33 @@
+<div class="top">
+<div class="align-shopmain row title">
+    <div class="searchbar icon col-xs-2">
+        <i class="fa fa-search"></i>
+        <input type="text" class="searchform" placeholder='search' ng-model="search.name">
+    </div>
+
+    <div class="col-xs-4 col-xs-offset-2">
+        <h1>our brand name</h1>
+    </div>
+
+    <i class="col-xs-1 col-xs-offset-2 fa fa-shopping-cart icon" ui-sref="shop.cart"></i>
+
+    <i class="col-xs-1 fa fa-user icon" ui-sref="auth"></i>
+</div>
+
+    <h3>admin login</h3>
+    <br><br>
+    <div class="row">
+        
+        <form method="post" >
+            <h4>Enter Email</h4>
+            <input ng-model="ctrl.email" class="inputform" type="text" name="EmailAddress" value="" placeholder="Email Address"  ng-model="ctrl.email"/>
+          
+            <h4>Enter Password</h4>
+            <input ng-model="ctrl.password" class="inputform" type="password" name="Password" placeholder="Password" ng-model="ctrl.password"/>
+
+            <br><br>
+
+            <input type="submit" value="Login" class="ourButton" ng-click="ctrl.login()"/>
+      </form>
+
+    </div>

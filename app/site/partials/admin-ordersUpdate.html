@@ -1,0 +1,51 @@
+<!-- admin-ordersUpdate.html -->
+<h3>
+	Update/Edit Orders
+</h3>
+
+<article class="order-frm">
+		<div>
+			<label>Name</label>
+			<input type="text" name="name" placeholder ="First/Last name" required>
+		</div>
+		<div>
+			<label>Email</label>
+			<input type="text" name="email" placeholder ="E-mail" required>
+		</div>
+		<div>
+			<label>Address 1</label>
+			<input type="text" name="address" placeholder ="Address 1" required>
+		</div>
+		<div>
+			<label>Address 2</label>
+			<input type="text" name="address" placeholder ="Address 2">
+		</div>
+		<div>
+			<label>City</label>
+
+			<label>Description</label>
+			<textarea type="text" name="name"required></textarea>
+		<div>
+			<label>Province/State</label>
+			<input type="text" name="province" placeholder ="Province/State" required>
+		</div>
+		<div>
+			<label>Postal Code/ZIP</label>
+			<input type="text" name="quantity" placeholder ="Postal Code/ZIP" required>
+		</div>
+		<div>
+			<label>Credit Card Number</label>
+			<input type="number" name="creditcard" placeholder ="Credit Card Number"required>
+		</div>
+		<div>
+			<button type="submit" ng-click="ctrl.updateOrder()">{{ctrl.product_update_btn}}</button>
+			<button type="submit" ng-click="ctrl.deleteOrder()">{{ctrl.product_delete_btn}}</button>
+
+		</div>
+
+
+</article>
+
+
+<div ui-view=""></div>
+

@@ -1,0 +1,45 @@
+<div ui-view>
+<nav>
+		<ul>
+			<li><a ui-sref="shop.product">Products</a></li>
+			<li><a ui-sref="shop.cart">Cart</a></li>
+			<li><a ui-sref="auth">Login</a></li>
+			<li>Search</li>
+		</ul>
+	</nav>
+<!-- display customer info for review -->
+
+<h3> Shipping Information </h3>
+	<div class="customer">
+		{{ctrl.finalCustomer.firstName}}
+		{{ctrl.finalCustomer.lastName}}
+		{{ctrl.finalCustomer.email}}
+		{{ctrl.finalCustomer.address1}}
+		{{ctrl.finalCustomer.apt}}
+		{{ctrl.finalCustomer.city}}
+		{{ctrl.finalCustomer.province}}
+		{{ctrl.finalCustomer.postal}}
+
+	</div>
+<!-- display order for review -->
+	<aside>
+<h3> Purchase Summary </h3>
+<table class="table" style="width:400px;">
+        <tr ng-repeat="cartProduct in ctrl.cartSrv.cart">
+            <td>{{cartProduct.name}}</td>
+            <td>{{cartProduct.quantity}}</td>
+            <td>{{cartProduct.quantity* cartProduct.price| currency:undefined:0}}</td>
+        <tr>
+        <tr>
+            <td>Total:</td>
+            <td>{{ctrl.total() | currency}}</td>
+            <td>&nbsp;</td>
+        </tr>
+    </table>
+</aside>
+
+	<div class="confirmation">
+		<h2>If this is all right, let's spend moneys, yay!</h2>
+		<button class="submit" ng-click="ctrl.submitOrder()">Confirm</button>
+	</div>
+</div>

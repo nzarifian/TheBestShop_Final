@@ -1,0 +1,50 @@
+<div ui-view=""></div>
+
+<div class="inventory col-xs-offset-1 col-xs-10">
+	<h3>edit product</h3>
+
+<br><br>
+
+	<article class="product-frm">
+		<div>
+			<h4>name</h4>
+			<input class="inputform" type="text" name="name" ng-model="ctrl.product.name" required>
+		</div>
+		<div>
+			<h4>image</h4>
+			<input class="inputform" type="text" name="image" ng-model="ctrl.product.image" required>
+		</div>
+		<div>
+			<h4>description</h4>
+			<textarea class="inputform" type="text" name="description" ng-model="ctrl.product.description" required></textarea>
+		</div>
+		<div>
+			<h4>category</h4>
+			<select class="inputform" name="category" ng-options="option as option.label for option in ctrl.categories" ng-model="ctrl.category">
+			</select>
+		</div>
+		<div>
+			<h4>price</h4>
+			<input class="inputform" type="number" name="price" ng-model="ctrl.product.price" required>
+		</div>
+		<div>
+			<h4>quantity</h4>
+			<input class="inputform" type="number" name="quantity" ng-model="ctrl.product.quantity" required>
+		</div>
+			<br><br>
+		<div>
+			<button class="ourButton" type="submit" ng-click="ctrl.updateProduct()">
+				{{ctrl.product_update_btn}}
+			</button>
+
+			<br><br>
+
+			<button class="ourButton" type="submit" ng-click="ctrl.deleteProduct(productId)">
+				{{ctrl.product_delete_btn}}
+			</button>
+		</div>
+	</article>
+
+
+	</div>
+</div>

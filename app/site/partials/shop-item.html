@@ -1,0 +1,25 @@
+<div ui-view=""></div>
+
+<div class="sidebar">
+	<ul class="col-xs-12 col-sm-2">
+		<a><li ng-click ="ctrl.$location.path('/product/')">all</li></a>
+		<a><li ng-click ="ctrl.$location.path('/product/shirts')">shirts</li></a>
+		<a><li ng-click ="ctrl.$location.path('/product/dress')">dresses</li></a>
+		<a><li ng-click ="ctrl.$location.path('/product/pants')">pants</li></a>
+		<a><li ng-click ="ctrl.$location.path('/product/outerwear')">outerwear</li></a>
+		<a><li ng-click ="ctrl.$location.path('/product/shoes')">shoes</li></a>
+	</ul>
+</div>
+
+<div class="productview col-xs-12 col-sm-9">
+			
+	<img class="col-xs-12 col-sm-7" ng-src="{{'/assets/img/' + ctrl.product.image}}">
+
+	<div class="itemDetails col-xs-12 col-sm-5">
+	<h2>{{ctrl.product.name}}</h2>
+	<h4>{{ctrl.product.price | currency}}</h4><br>
+	<p>{{ctrl.product.description}}</p><br>
+
+		<button class="addToCart" ng-click="ctrl.addToCart(ctrl.product); toggle=!toggle"><span ng-show="toggle">product added!</span><span ng-hide="toggle">add to cart</span></button>
+	</div> 
+</div>

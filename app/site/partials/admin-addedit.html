@@ -1,0 +1,33 @@
+<div ui-view=""></div>
+
+<div class="inventory col-xs-offset-1 col-xs-10">
+	<h3>products</h3>
+	<div ng-hide="ctrl.is_products">
+		<p>You have no products</p>
+	</div>
+	
+	<br><br>
+
+	<div ng-show="ctrl.is_products">
+		<table class="products-list table">
+			<tr>
+				<th>Category</th>
+				<th>Name</th>
+				<th>Price</th>
+				<th>Quantity</th>
+				<th>Description</th>
+				<th>Edit</th>
+			</tr>
+			<tr ng-repeat="product in ctrl.products">
+				<td>{{product.category}}</td>
+				<td>{{product.name}}</td>
+				<td>{{product.price | currency:undefined:0}}</td>
+				<td>{{product.quantity}}</td>
+				<td style="text-align:left">{{product.description}}</td>
+				<td><a ng-click="ctrl.editProduct(product)">Edit</a></td>
+			</tr>
+		</table>
+	</div>
+
+	<button class="ourButton" style="width:100%" ng-click="ctrl.invent_add_btn()">Add Product</button>
+</div>

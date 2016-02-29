@@ -1,0 +1,32 @@
+<div class="jumbotron"></div>
+<div ui-view=""></div>
+
+<div class="section-header">
+	<h1>best sellers</h1>
+</div>
+
+<div class="row align-shopmain">
+
+	<div class="col-xs-12 col-sm-3" ng-repeat="product in ctrl.products | filter:search">
+		<a ng-click="ctrl.toProduct(product,product.id)">
+			<img ng-src="{{'/assets/img/' + product.image}}" width="100%">
+		</a>
+		
+		<div class="product-info">
+			<div class="product-name">
+				<a ng-click="ctrl.toProduct(product,product.id)">
+
+				<h4>{{product.name}}</h4>
+				</a>
+			</div>
+
+			<div class="product-cost">
+				<a ng-click="ctrl.toProduct(product,product.id)">
+				<p>{{product.price | currency}}</p>
+				</a>
+			</div>
+
+		</div>
+	</div>
+</div>
+

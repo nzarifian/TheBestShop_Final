@@ -1,0 +1,67 @@
+<div>
+<div ui-view=""></div>
+<aside>
+<h3> Purchase Summary </h3>
+<table class="table" style="width:400px;">
+        <tr ng-repeat="cartProduct in ctrl.cartSrv.cart">
+            <td>{{cartProduct.name}}</td>
+            <td>{{cartProduct.quantity}}</td>
+            <td>{{cartProduct.quantity* cartProduct.price| currency:undefined:0}}</td>
+        <tr>
+        <tr>
+            <td>Total:</td>
+            <td>{{ctrl.total() | currency}}</td>
+            <td>&nbsp;</td>
+        </tr>
+    </table>
+</aside>
+<h1>Shipping </h1>
+<!-- customer page after the cart where we get all details with shipping etc -->
+
+<form name="frm" ng-submit="ctrl.reviewOrder()">
+	<div>
+		<label>First Name</label>
+		<input type="text" name="first_name" ng-model="ctrl.firstName" required>
+	</div>
+	<div>
+		<label>Last Name</label>
+		<input type="text" name="last_name" ng-model="ctrl.lastName" required>
+	</div>
+	<div>
+		<label>Email</label>
+		<input type="text" name="email" ng-model="ctrl.email" required>
+	</div>
+	<div>
+		<label>Address 1</label>
+		<input type="text" name="address1" ng-model="ctrl.address1" required>
+	</div>
+	<div>
+		<label>Address 2</label>
+		<input type="text" name="address2" ng-model="ctrl.address2">
+	</div>
+	<div>
+		<label>Apt/Suite</label>
+		<input type="text" name="apt" ng-model="ctrl.apt" required>
+	</div>
+	<div>
+		<label>City</label>
+		<input type="text" name="city" ng-model="ctrl.city" required>
+	</div>
+	<div>
+		<label>Province</label>
+		<input type="text" name="province" ng-model="ctrl.province" required>
+	</div>
+	<div>
+		<label>Postal Code</label>
+		<input type="text" name="postal" ng-model="ctrl.postal" required>
+	</div>
+	<button ng-click="ctrl.goToCart()">Back to Cart </button>
+
+	<button type="submit" ng-cilck="ctrl.reviewOrder()"> Review & Submit Order </button>
+
+</form>
+</div>
+<!-- Display GET product info-->
+<!-- Form for billing Information -->
+
+<form></form>

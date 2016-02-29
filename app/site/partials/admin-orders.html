@@ -1,0 +1,45 @@
+
+<!-- <div style="width: 500px; display: inline-block; position: absolute; margin-left:220px; margin-top: -105px;"><!<! --> <!-- <!-admin page to view all the orders, and make changes to details hopefully -->
+    <h3>View All Orders</h3>
+
+    <!-- <hr style="margin-top: 5px; border-width:1px; border-color: #929292;"> -->
+
+	<div ng-repeat="orders in ctrl.orders">
+		<table class="table">
+		<!-- Cart item -->
+			<tr>
+				<th>Item</th>
+				<th>Qty</th>
+				<th>Price</th>
+				<th>&nbsp;</th>
+			</tr>
+			<tr ng-repeat="things in orders.cart">
+				<td>{{things.name}}</td>
+				<td>{{things.quantity}}</td>
+				<td>{{things.price |currency}}</td>
+				<td><a ng-click="ctrl.editOrder(order)">Edit</a></td>
+			</tr>
+		</table>
+
+		<!-- <div ng-repeat="orders in ctrl.orders">
+		Orders
+		{{orders.total}}
+		{{orders.tax}}
+		{{orders.final_total}}
+		<br>
+
+			<th>cart items</th><br>
+			<div ng-repeat="things in ctrl.orders.cart">
+				<td>Item: {{things.name}}</td><br>
+				<td>Qty: {{things.quantity}}</td><br>
+				<td>{{things.price |currency}}</td><br>
+			</div>
+			<hr>
+		</div>
+	</div> -->
+
+	<div ui-view=""></div>
+
+
+    
+

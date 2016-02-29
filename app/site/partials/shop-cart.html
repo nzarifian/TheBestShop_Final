@@ -1,0 +1,25 @@
+<div style="width:600px; margin-left: 50px;">
+<h2>Your Order</h2>
+    <table class="table">
+        <tr>
+            <th>Item Name</th>
+            <th>Description</th>
+            <th>Qty</th>
+            <th>Cost</th>
+            <th>&nbsp;</th>
+        </tr>
+        <tr ng-repeat="cartProduct in ctrl.cartSrv.cart">
+            <td>{{cartProduct.name}}</td>
+            <td>{{cartProduct.description}}</td>
+            <td><input type="number" ng-model="cartProduct.quantity" value="{{cartProduct.quantity}}"></td>
+            <td>{{cartProduct.quantity* cartProduct.price| currency:undefined:0}}</td>
+            <td><button ng-click="ctrl.deleteCartItem(cartProduct)">delete</button></td>
+        <tr>
+        <tr>
+            <td><button ng-click="ctrl.checkout()">checkout</button></td>
+            <td></td>
+            <td>Total:</td>
+            <td>{{ctrl.total() | currency}}</td>
+        </tr>
+    </table>
+</div>

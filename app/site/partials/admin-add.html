@@ -1,0 +1,41 @@
+<div ui-view=""></div>
+
+<div class="inventory col-xs-offset-1 col-xs-10">
+	<h3>add product</h3>
+	<br>
+	<br>
+	<article class="product-frm">
+		<form name="add-product">
+
+			<div>
+				<h4>name</h4>
+				<input class="inputform" type="text" name="name" ng-model="ctrl.name" required>
+			</div>
+			<div>
+				<h4>image</h4>
+				<input class="inputform" type="text" name="image" ng-model="ctrl.image" required>
+			</div>
+			<div>
+				<h4>description</h4>
+				<textarea class="inputform" type="text" name="name" ng-model="ctrl.description" required></textarea>
+			</div>
+			<div>
+				<h4>category</h4>
+				<select class="inputform" ng-options="option.value as option.label for option in ctrl.categories" ng-model="ctrl.category" name="category">
+				</select>
+			</div>
+			<div>
+				<h4>price</h4>
+				<input class="inputform" type="text" name="price" ng-model="ctrl.price" required>
+			</div>
+			<div>
+				<h4>quantity</h4>
+				<input class="inputform" type="number" name="quantity" ng-model="ctrl.quantity" required>
+			</div>
+			<div>
+			<br><br>
+				<button class="ourButton" type="submit" ng-click="ctrl.addProduct()">add to inventory</button>
+			</div>
+		</form>
+	</article>
+</div>
